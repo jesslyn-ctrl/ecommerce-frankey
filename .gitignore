@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# logs from logger
+logs
+
+# Parcel
+.cache
+.parcel-cache
+
+# vscode
+.vscode
+
+# .lock files
+package-lock.json
+yarn.lock

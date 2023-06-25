@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Jewerly",
+        "image": "https://images.unsplash.com/photo-1621334119889-bcc0b9e97bc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80"
+    },
+    {
+        "id": 2,
+        "name": "Men's Clothing",
+        "image": "https://media.istockphoto.com/id/504742864/photo/stylish-business-clothing-for-businessman.jpg?s=612x612&w=0&k=20&c=AsGrhEMNkmpwqaJPBSACPthMuBsmsDIecRkdFXKSnl0="
+    },
+    {
+        "id": 3,
+        "name": "Women's Clothing",
+        "image": "https://as1.ftcdn.net/v2/jpg/01/69/30/80/1000_F_169308011_LSNsiBjye2ikfLPoTWr2aPSd755USipd.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Beauty",
+        "image": "https://img.freepik.com/premium-photo/woman-make-up-products-accessories-pastel-background_151851-799.jpg"
+    }
+]

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="/dist/tailwind.css" rel="stylesheet">
+  <script type="text/javascript" src="./assets/js/cart.js" defer></script>
+  <title>Frankey</title>
+</head>
+
+<body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false}">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <!-- Upperbar -->
+    <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
+      <a href="index.html">
+        <img class="cursor-pointer h-[100px] w-[150px]" src="./assets/images/logo.png" alt="brand" />
+      </a>
+  
+      <!-- Burger -->
+      <div class="md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+  
+      <!-- Search -->
+      <form class="hidden h-9 w-2/5 items-center border rounded-md md:flex">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="mx-3 h-4 w-4">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+  
+        <input class="hidden w-11/12 outline-none md:block" type="search" placeholder="Search" />
+  
+        <button class="ml-auto h-full text-white bg-blue-400 px-4 font-semibold hover:bg-blue-500 transition duration-200 ease-in-out">
+          Search
+        </button>
+      </form>
+  
+      <div class="hidden gap-3 md:!flex">
+        <!-- Cart -->
+        <a href="cart.html" class="flex cursor-pointer flex-col items-center justify-center">
+          <img width="26" height="26" src="https://img.icons8.com/3d-fluency/94/shopping-cart.png" alt="shopping-cart"/>
+  
+          <p class="text-xs">Cart</p>
+        </a>
+  
+        <!-- Account -->
+        <a href="#" class="relative flex cursor-pointer flex-col items-center justify-center">
+          <span class="absolute bottom-[33px] right-1 flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+          </span>
+  
+          <img width="26" height="26" src="https://img.icons8.com/3d-fluency/94/guest-male--v3.png" alt="guest-male--v3"/>
+  
+          <p class="text-xs">Account</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="relative bg-sky-500/75 hover:bg-blue-400 transition duration-300 ease-in-out">
+      <div class="mx-auto hidden h-12 w-full max-w-[1200px] items-center md:flex">
+        <div class="mx-7 flex gap-8">
+          <a class="nav-link font-medium text-white duration-100 hover:bold hover:text-red-200" href="index.html">Home</a>
+        </div>
+
+        <div class="ml-auto flex gap-4 px-5">
+          <button class="items-center justify-center rounded font-medium text-center text-teal-700 bg-white border-white lg:border border-2 px-4 py-1 text-base transition duration-200 ease-in-out hover:bg-slate-100" href="login.html">Login</button>
+
+          <button class="items-center justify-center rounded font-medium text-center text-teal-700 bg-white border-white lg:border border-2 px-4 py-1 text-base transition duration-200 ease-in-out hover:bg-slate-100" href="login.html">Register</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <!-- Main Content -->
+  <main class="mt-24 md:mt-36">
+    <section>
+      <div class="mx-auto mt-4 max-w-[1200px] px-5">
+        <ul class="flex items-center">
+          <li class="cursor-pointer">
+            <a href="index.html">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                <path
+                  d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                <path
+                  d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <span class="mx-2 text-gray-500">&gt;</span>
+          </li>
+    
+          <li class="text-gray-500">Cart</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container mx-auto min-h-screen max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10">
+      <!-- Mobile Cart -->
+      <div class="container mx-auto my-3 flex w-full flex-col gap-3 px-4 md:hidden">
+        <div id="cart-mobile-container"></div>
+      </div>
+  
+      <!-- Desktop Cart -->
+      <div class="hidden w-full max-w-[1200px] grid-cols-1 gap-3 px-5 pb-10 md:grid">
+        <div id="cart-container"></div>
+      </div>
+  
+      <!-- Order Summary  -->
+      <div class="mx-auto w-full px-4 md:max-w-[750px] lg:max-w-[400px]">
+        <div id="order-summary" class="border py-5 px-4 shadow-md">
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- End Main Content -->
+  
+  <!-- Footer -->
+  <footer>
+    <section>
+      <!-- Desktop Footer -->
+      <div class="mx-auto hidden w-full max-w-[1200px] justify-between border-t pb-10 lg:flex">
+        <div class="ml-5">
+          <img class="mt-10 mb-5 h-[100px] w-[150px]" src="./assets/images/logo.png" alt="company-logo" />
+          <p class="pl-0">
+            Lorem ipsum dolor sit amet consectetur <br />
+            adipisicing elit.
+          </p>
+          <div class="mt-10 flex gap-3">
+            <a href="https://github.com/jesslyn-ctrl">
+              <img class="h-6 w-6 cursor-pointer" src="./assets/images/github.svg" alt="github-icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/jesslyn-jesslyn-5798711a7/">
+              <img class="h-6 w-6 cursor-pointer" src="./assets/images/linkedin.svg" alt="linkedin-icon" />
+            </a>
+          </div>
+        </div>
+    
+        <div class="flex gap-6">
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">FEATURES</p>
+            <ul class="text-sm text-blue-500 leading-8">
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Marketing</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Commerce</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Analytics</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Merchendise</a></li>
+            </ul>
+          </div>
+    
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">SUPPORT</p>
+            <ul class="text-sm text-blue-500 leading-8">
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Pricing</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Docs</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Audition</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Art Status</a></li>
+            </ul>
+          </div>
+    
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">DOCUMENTS</p>
+            <ul class="text-sm text-blue-500 leading-8">
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Terms</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Conditions</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Privacy</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">License</a></li>
+            </ul>
+          </div>
+    
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">DELIVERY</p>
+            <ul class="text-sm text-blue-500 leading-8">
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">List of countries</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Special information</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Restrictions</a></li>
+              <li class="hover:text-blue-400 hover:font-medium"><a href="#">Payment</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Footer -->
+      <div class="mx-auto flex w-full max-w-[1200px] justify-center text-center bg-slate-200 pb-10 md:hidden">
+        <div>
+          <img class="mt-10 h-[130px] w-[180px]" src="./assets/images/logo.png" alt="company-logo" />
+
+          <div>
+            <div class="mx-5 mt-10">
+              <p class="font-medium text-gray-500">FEATURES</p>
+              <ul class="text-sm text-blue-500 leading-8">
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Marketing</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Commerce</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Analytics</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Merchendise</a></li>
+              </ul>
+            </div>
+      
+            <div class="mx-5 mt-10">
+              <p class="font-medium text-gray-500">SUPPORT</p>
+              <ul class="text-sm text-blue-500 leading-8">
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Pricing</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Docs</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Audition</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Art Status</a></li>
+              </ul>
+            </div>
+
+            <div class="mx-5 mt-10">
+              <p class="font-medium text-gray-500">DOCUMENTS</p>
+              <ul class="text-sm text-blue-500 leading-8">
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Terms</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Conditions</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Privacy</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">License</a></li>
+              </ul>
+            </div>
+      
+            <div class="mx-5 mt-10">
+              <p class="font-medium text-gray-500">DELIVERY</p>
+              <ul class="text-sm text-blue-500 leading-8">
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">List of countries</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Special information</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Restrictions</a></li>
+                <li class="hover:text-blue-400 hover:font-medium"><a href="#">Payment</a></li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <section class="h-11 bg-blue-200">
+      <div
+        class="mx-auto flex max-w-[1200px] items-center justify-between px-4 pt-2"
+      >
+        <p class="text-black font-semibold">&copy; Jesslyn, 2023</p>
+        <div class="flex items-center space-x-3">
+          <img
+            class="h-6"
+            src="https://static-00.iconduck.com/assets.00/mastercard-icon-2048x1286-s6y46dfh.png"
+            alt="Visa icon"
+          />
+          <img
+            class="h-6"
+            src="https://i0.wp.com/bursadesain.com/wp-content/uploads/2016/08/LOGO-BCA-BIRU.jpg?fit=2926%2C1208&ssl=1"
+            alt="BCA-icon"
+          />
+          <img
+            class="h-8"
+            src="https://logos-world.net/wp-content/uploads/2020/06/Visa-Logo-2006.png"
+            alt="Apple pay icon"
+          />
+        </div>
+      </div>
+    </section>
+  </footer>
+  <!-- End Footer -->
+
+  <button id="scroll-top-btn" onclick="scrollToTop()" class="fixed bottom-5 right-5 bg-blue-400 hover:bg-blue-500 text-white rounded-full p-3 shadow-md hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <div id="confirm-popup" class="hidden fixed top-0 left-0 right-0 bottom-0 items-center justify-center bg-gray-900 bg-opacity-50">
+    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+      <h2 id="popup-title" class="text-xl font-bold mb-4">Remove Item</h2>
+      <p id="popup-message" class="text-gray-700 mb-8">Are you sure you want to remove this item from the cart?</p>
+      <div class="flex float-right">
+        <button id="popup-ok-btn" class="px-4 py-2 w-[60px] bg-blue-500 text-white rounded-md mr-2 font-medium uppercase shadow-md hover:bg-blue-400">Ok</button>
+        <button id="popup-cancel-btn"  class="px-4 py-2 w-[80px] bg-slate-400 text-white rounded-md font-medium shadow-md hover:bg-slate-500">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>
