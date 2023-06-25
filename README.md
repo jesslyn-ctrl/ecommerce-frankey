@@ -30,4 +30,8 @@ Run the project
 
 ```bash
 npm run watch
+```
 
+<hr>
+
+**Special thanks to https://fakestoreapi.com/ for providing the APIs data!**
